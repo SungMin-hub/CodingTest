@@ -1,0 +1,23 @@
+name: Update README with Commit Stats
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # 매일 자정 실행
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Get Commit Stats
+        run: |
+          TODAY_COMMITS=$(git log --since=midnight --author="$(git config user.name)" --pretty=oneline | wc -l)
+          echo "Today's commits: $TODAY_COMMITS"
+      - name: Update README
+        run: |
+          sed -i "s/<!--TODAY_COMMITS-->/Today's commits: $TODAY_COMMITS/" README.md
+      - name: Push Changes
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
