@@ -12,7 +12,7 @@ class Solution {
             char[] dic_spell = dic[i].toCharArray();
             Arrays.sort(dic_spell);
             String result = new String(dic_spell);
-            if(str.equals(result)) answer = 1;
+            if(str.equals(result)) return 1;
         }
         
         return answer;
