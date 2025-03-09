@@ -7,7 +7,6 @@ class Solution {
         Arrays.sort(people);
         
         for(int i=people.length-1; i>=idx; i--){
-            if(people[i] > limit) continue;
             if(people[i] + people[idx] <= limit) idx++;
             
             answer++;
