@@ -2,7 +2,6 @@ import java.util.*;
 
 class Solution {
     public String solution(String[] cards1, String[] cards2, String[] goal) {
-        String answer = "";
         Queue<String> c1Que = new LinkedList<>();
         Queue<String> c2Que = new LinkedList<>();
         
