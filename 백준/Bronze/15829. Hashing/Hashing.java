@@ -12,11 +12,13 @@ public class Main {
 		int r = 31;
 		int M = 1234567891;
 
-		int sum = 0;
+		long sum = 0;
+		long pow = 1;
 
 		for(int i=0; i<L; i++){
-			int n = str.charAt(i) - 'a' + 1;
-			sum += (n * (int)Math.pow(r,i)) % M;
+			long n = str.charAt(i) - 'a' + 1;
+			sum = (sum + n * pow % M) % M;
+			pow = (r * pow) % M;
 		}
 		System.out.println(sum);
 	}
