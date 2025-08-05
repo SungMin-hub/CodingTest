@@ -10,17 +10,19 @@ public class Main {
 		int M = Integer.parseInt(br.readLine());
 		String S = br.readLine();
 
-		String p = "I";
-		for(int i=0;i<N;i++){
-			p += "OI";
-		}
-
 		int cnt = 0;
-		int len = p.length();
+		int p = 0;
 
-		for(int i=0;i<=M-len;i++){
-			if(S.substring(i,i+len).equals(p)){cnt++;}
+		for(int i=1; i< M-1; i++){
+			if(S.charAt(i-1) == 'I' && S.charAt(i) == 'O'&& S.charAt(i+1) == 'I'){
+				p++;
+				if(p >= N) cnt++;
+				i++;
+			} else {
+				p = 0;
+			}
 		}
+
 		System.out.println(cnt);
 	}
 }
