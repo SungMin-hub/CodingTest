@@ -11,7 +11,6 @@ public class Main {
 		long D1 = Long.parseLong(st.nextToken());
 		long D2 = Long.parseLong(st.nextToken());
 
-		System.out.println(K * K - (D1 - D2) * (D1 - D2)) ;
+		System.out.println(K * K - (D1 - D2) * (D1 - D2) / 4);
 	}
 }
-
