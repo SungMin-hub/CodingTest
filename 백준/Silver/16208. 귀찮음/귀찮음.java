@@ -9,10 +9,10 @@ public class Main {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int n = Integer.parseInt(br.readLine());
 		StringTokenizer st = new StringTokenizer(br.readLine());
-		int[] arr = new int[n];
-		int sum = 0;
+		long[] arr = new long[n];
+		long sum = 0;
 		for (int i = 0; i < n; i++) {
-			arr[i] = Integer.parseInt(st.nextToken());
+			arr[i] = Long.parseLong(st.nextToken());
 			sum += arr[i];
 		}
 
@@ -23,9 +23,9 @@ public class Main {
 
 		Arrays.sort(arr);
 
-		int ans = 0;
+		long ans = 0;
 		for (int i = 0; i < n; i++) {
-			int a = arr[i];
+			long a = arr[i];
 			sum -= a;
 			ans += a * sum;
 		}
